@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Games played:</strong>
+  <%= @stat.games_played %>
+</p>
+
+<p>
+  <strong>Ppg:</strong>
+  <%= @stat.ppg %>
+</p>
+
+<p>
+  <strong>Apg:</strong>
+  <%= @stat.apg %>
+</p>
+
+<p>
+  <strong>Rpg:</strong>
+  <%= @stat.rpg %>
+</p>
+
+<p>
+  <strong>Mpg:</strong>
+  <%= @stat.mpg %>
+</p>
+
+<p>
+  <strong>Per:</strong>
+  <%= @stat.per %>
+</p>
+
+<p>
+  <strong>Gf:</strong>
+  <%= @stat.gf %>
+</p>
+
+<p>
+  <strong>Ft:</strong>
+  <%= @stat.ft %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @stat.player_id %>
+</p>
+
+<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>

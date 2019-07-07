@@ -1,0 +1,62 @@
+<%= form_with(model: stat, local: true) do |form| %>
+  <% if stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stat.errors.count, "error") %> prohibited this stat from being saved:</h2>
+
+      <ul>
+        <% stat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :games_played %>
+    <%= form.number_field :games_played %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ppg %>
+    <%= form.text_field :ppg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apg %>
+    <%= form.text_field :apg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rpg %>
+    <%= form.text_field :rpg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mpg %>
+    <%= form.text_field :mpg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :per %>
+    <%= form.text_field :per %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gf %>
+    <%= form.text_field :gf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ft %>
+    <%= form.text_field :ft %>
+  </div>
+
+  <div class="field">
+    <%= form.label :player_id %>
+    <%= form.number_field :player_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

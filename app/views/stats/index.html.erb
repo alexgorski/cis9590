@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Games played</th>
+      <th>Ppg</th>
+      <th>Apg</th>
+      <th>Rpg</th>
+      <th>Mpg</th>
+      <th>Per</th>
+      <th>Gf</th>
+      <th>Ft</th>
+      <th>Player</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stats.each do |stat| %>
+      <tr>
+        <td><%= stat.games_played %></td>
+        <td><%= stat.ppg %></td>
+        <td><%= stat.apg %></td>
+        <td><%= stat.rpg %></td>
+        <td><%= stat.mpg %></td>
+        <td><%= stat.per %></td>
+        <td><%= stat.gf %></td>
+        <td><%= stat.ft %></td>
+        <td><%= stat.player_id %></td>
+        <td><%= link_to 'Show', stat %></td>
+        <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stat', new_stat_path %>

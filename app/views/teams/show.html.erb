@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shortname:</strong>
+  <%= @team.shortname %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @team.city %>
+</p>
+
+<p>
+  <strong>Conferenceid:</strong>
+  <%= @team.conferenceId %>
+</p>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

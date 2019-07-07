@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  games_played: 1
+  ppg: 1.5
+  apg: 1.5
+  rpg: 1.5
+  mpg: 1.5
+  per: 1.5
+  gf: 1.5
+  ft: 1.5
+  player_id: 1
+
+two:
+  games_played: 1
+  ppg: 1.5
+  apg: 1.5
+  rpg: 1.5
+  mpg: 1.5
+  per: 1.5
+  gf: 1.5
+  ft: 1.5
+  player_id: 1

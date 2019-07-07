@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shortname: MyString
+  city: MyString
+  conferenceId: 1
+
+two:
+  shortname: MyString
+  city: MyString
+  conferenceId: 1
