@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_012348) do
+ActiveRecord::Schema.define(version: 2019_07_10_012932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 2019_07_10_012348) do
     t.integer "team_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "twitter_handle"
+    t.string "twitter_num_followers"
+    t.string "instagram_handle"
+    t.string "instagram_num_followers"
   end
 
   create_table "stats", force: :cascade do |t|

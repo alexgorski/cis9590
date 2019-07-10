@@ -9,6 +9,10 @@
       <th>Lastname</th>
       <th>Position</th>
       <th>Team</th>
+      <th>Twitter Handle</th>
+      <th>Twitter Followers</th>
+      <th>Instagram Handle</th>
+      <th>Instagram Followers</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +24,10 @@
         <td><%= player.lastname %></td>
         <td><%= player.position %></td>
         <td><%= player.team_id %></td>
+        <td><%= player.twitter_handle %></td>
+        <td><%= player.twitter_num_followers %></td>
+        <td><%= player.instagram_handle %></td>
+        <td><%= player.instagram_num_followers %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
