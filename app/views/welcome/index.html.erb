@@ -24,7 +24,7 @@
       <tr>
         <td><%= link_to coach.name, coach %></td>
         <td>Coach</td>
-        <td><%= link_to coach.team.city, coach.team%></td>
+        <td><%= link_to coach.team ? coach.team.city : "CITY", coach.team%></td>
       </tr>
     <% end %>
   </tbody>
