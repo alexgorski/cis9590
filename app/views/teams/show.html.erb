@@ -11,9 +11,9 @@
 </p>
 
 <p>
-  <strong>Conferenceid:</strong>
-  <%= @team.conference_id %>
+  <strong>Conference:</strong>
+  <%= @team.conference.name %>
 </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'All Teams', teams_path %>

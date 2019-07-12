@@ -17,8 +17,89 @@
 
 <p>
   <strong>Team:</strong>
-  <%= @player.team_id %>
+  <%= link_to @player.team.city, @player.team %>
 </p>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<p>
+  <strong>Twitter Handle:</strong>
+  <%= @player.twitter_handle %>
+</p>
+
+<p>
+  <strong>Number of Twitter Followers:</strong>
+  <%= @player.twitter_num_followers %>
+</p>
+
+<p>
+  <strong>Instagram Handle:</strong>
+  <%= @player.instagram_handle %>
+</p>
+
+<p>
+  <strong>Number of Instagram Followers:</strong>
+  <%= @player.instagram_num_followers %>
+</p>
+
+<p><strong><u>Player Stats</u></strong></p>
+
+<% @player.stats.each do |stat| %>
+  <p>
+    <strong>Games Played:</strong>
+    <%= stat.games_played %>
+  </p>
+
+  <p>
+    <strong>PPG:</strong>
+    <%= stat.ppg %>
+  </p>
+
+  <p>
+    <strong>APG:</strong>
+    <%= stat.apg %>
+  </p>
+
+  <p>
+    <strong>RPG:</strong>
+    <%= stat.rpg %>
+  </p>
+
+  <p>
+    <strong>MPG:</strong>
+    <%= stat.mpg %>
+  </p>
+
+  <p>
+    <strong>PER:</strong>
+    <%= stat.per %>
+  </p>
+
+  <p>
+    <strong>FG:</strong>
+    <%= stat.fg %>
+  </p>
+
+  <p>
+    <strong>FT:</strong>
+    <%= stat.ft %>
+  </p>
+<% end %>
+
+<p><strong><u>Player Endorsements</u></strong></p>
+
+<% @player.endorsements.each do |endorsement| %>
+<p>
+  <strong>Brand:</strong>
+  <%= endorsement.brand %>
+</p>
+
+<p>
+  <strong>Endorsement Notes:</strong>
+  <%= endorsement.notes %>
+</p>
+<% end.empty? and begin %>
+  <p>No Endorsements Found</p>
+<% end %>
+
+<%= link_to 'Home', root_path %> | 
+<%= link_to 'Edit Player', edit_player_path(@player) %>
+

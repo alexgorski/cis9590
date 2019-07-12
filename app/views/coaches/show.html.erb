@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Firstname:</strong>
+  <strong>First Name:</strong>
   <%= @coach.firstname %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
+  <strong>Last Name:</strong>
   <%= @coach.lastname %>
 </p>
 
 <p>
-  <strong>Yearstart:</strong>
+  <strong>Year Start:</strong>
   <%= @coach.yearstart %>
 </p>
 
 <p>
   <strong>Team:</strong>
-  <%= @coach.team_id %>
+  <%= @coach.team.city %>
 </p>
 
-<%= link_to 'Edit', edit_coach_path(@coach) %> |
-<%= link_to 'Back', coaches_path %>
+
+<%= link_to 'Home', root_path %> %> |
+<%= link_to 'All Coaches', coaches_path %>
