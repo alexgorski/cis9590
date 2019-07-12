@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to player.name, player %></td>
         <td><%= player.position %></td>
-        <td><%= link_to player.team? ? player.team.city : "CITY", player.team %></td>
+        <td><%= link_to player.team ? player.team.city : "CITY", player.team %></td>
       </tr>
     <% end %>
     <% @coaches.each do |coach| %>
