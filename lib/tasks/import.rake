@@ -34,4 +34,19 @@ namespace :import do
     end
   end
 
+  desc "TODO"
+  task socialmedia: :environment do
+    filename = File.join( Rails.root, "lib/SOCIALMEDIA1.csv" )
+    CSV.foreach(filename, headers: true) do |row|
+      player = Player.find(row[0])
+      if player
+        player.twitter_handle = row[5]
+        player.twitter_num_followers = row[6]
+        player.instagram_handle = row[7]
+        player.instagram_num_followers = row[8]
+        player.save
+      end
+    end
+  end
+
 end
