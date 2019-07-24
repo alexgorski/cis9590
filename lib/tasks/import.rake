@@ -36,7 +36,7 @@ namespace :import do
 
   desc "TODO"
   task socialmedia: :environment do
-    filename = File.join( Rails.root, "lib/SOCIALMEDIA1.csv" )
+    filename = File.join( Rails.root, "lib/SOCIALMEDIA2.csv" )
     CSV.foreach(filename, headers: true) do |row|
       player = Player.find(row[0])
       if player
