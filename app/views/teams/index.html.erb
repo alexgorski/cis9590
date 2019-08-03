@@ -1,14 +1,18 @@
+<style>div.search{margin-left:10px;}</style>
 <p id="notice"><%= notice %></p>
 
 <h1>Teams</h1>
 
-<table>
-  <thead>
+<table class="table table-striped table-hover"
+  data-toggle="table"
+  data-search="true"
+  data-search-align="left">
+  <thead class="thead-dark">
     <tr>
-      <th>Name</th>
-      <th>City</th>
-      <th>Conference</th>
-      <th colspan="3"></th>
+      <th scope="col" data-sortable="true">Name</th>
+      <th scope="col" data-sortable="true">City</th>
+      <th scope="col" data-sortable="true">Conference</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -18,7 +22,7 @@
         <td><%= team.shortname %></td>
         <td><%= team.city %></td>
         <td><%= team.conference.title %></td>
-        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Details', team %></td>
       </tr>
     <% end %>
   </tbody>
