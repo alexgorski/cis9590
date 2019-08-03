@@ -1,105 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row m-2">
+    <h2>Players Details</h2>
+  </div>
+  <div class="row m-2">
+    <div class="col-6 col-md-3 p-1">First Name: <%= @player.firstname %></div>
+    <div class="col-6 col-md-3 p-1">Last Name: <%= @player.lastname %></div>
+    <div class="col-6 col-md-3 p-1">Position: <%= @player.position %></div>
+    <div class="col-6 col-md-3 p-1">Team: <%= link_to @player.team.city, @player.team %></div>
+    <div class="col-6 col-md-3 p-1">Twitter: <a href="https://www.twitter.com/<%= @player.twitter_handle%>" > <%= @player.twitter_handle%> </a></div>
+    <div class="col-6 col-md-3 p-1">Twitter Followers: <%= @player.twitter_num_followers %></div>
+    <div class="col-6 col-md-3 p-1">Instagram: <a href="https://www.instagram.com/<%= @player.instagram_handle %>"><%= @player.instagram_handle %> </a></div>
+    <div class="col-6 col-md-3 p-1">Instagram Followers: <%= @player.instagram_num_followers %></div>
+  </div>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @player.firstname %>
-</p>
+  <div class="row m-2 mt-4">
+    <h3>Players Stats</h3>
+  </div>
+  <div class="row m-2">
+  <% @player.stats.each do |stat| %>
+    <div class="col-6 col-md-3 p-1">Games Played: <%= stat.games_played %></div>
+    <div class="col-6 col-md-3 p-1">PPG: <%= stat.ppg %></div>
+    <div class="col-6 col-md-3 p-1">APG: <%= stat.apg %></div>
+    <div class="col-6 col-md-3 p-1">RPG: <%= stat.rpg %></div>
+    <div class="col-6 col-md-3 p-1">MPG: <%= stat.mpg %></div>
+    <div class="col-6 col-md-3 p-1">PER: <%= stat.per %></div>
+    <div class="col-6 col-md-3 p-1">FG: <%= stat.fg %></div>
+    <div class="col-6 col-md-3 p-1">FT: <%= stat.ft %></div>
+  <% end %>
+  </div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @player.lastname %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @player.position %>
-</p>
-
-<p>
-  <strong>Team:</strong>
-  <%= link_to @player.team.city, @player.team %>
-</p>
-
-<p>
-  <strong>Twitter Handle:</strong>
-  <a href="https://www.twitter.com/<%= @player.twitter_handle%>" > <%= @player.twitter_handle%> </a>
-</p>
-
-<p>
-  <strong>Number of Twitter Followers:</strong>
-  <%= @player.twitter_num_followers %>
-</p>
-
-<p>
-  <strong>Instagram Handle:</strong>
-  <a href="https://www.instagram.com/<%= @player.instagram_handle %>"><%= @player.instagram_handle %> </a>
-</p>
-
-<p>
-  <strong>Number of Instagram Followers:</strong>
-  <%= @player.instagram_num_followers %>
-</p>
-
-<p><strong><u>Player Stats</u></strong></p>
-
-<% @player.stats.each do |stat| %>
-  <p>
-    <strong>Games Played:</strong>
-    <%= stat.games_played %>
-  </p>
-
-  <p>
-    <strong>PPG:</strong>
-    <%= stat.ppg %>
-  </p>
-
-  <p>
-    <strong>APG:</strong>
-    <%= stat.apg %>
-  </p>
-
-  <p>
-    <strong>RPG:</strong>
-    <%= stat.rpg %>
-  </p>
-
-  <p>
-    <strong>MPG:</strong>
-    <%= stat.mpg %>
-  </p>
-
-  <p>
-    <strong>PER:</strong>
-    <%= stat.per %>
-  </p>
-
-  <p>
-    <strong>FG:</strong>
-    <%= stat.fg %>
-  </p>
-
-  <p>
-    <strong>FT:</strong>
-    <%= stat.ft %>
-  </p>
-<% end %>
-
-<p><strong><u>Player Endorsements</u></strong></p>
-
-<% @player.endorsements.each do |endorsement| %>
-<p>
-  <strong>Brand:</strong>
-  <%= endorsement.brand %>
-</p>
-
-<p>
-  <strong>Endorsement Notes:</strong>
-  <%= endorsement.notes %>
-</p>
-<% end.empty? and begin %>
-  <p>No Endorsements Found</p>
-<% end %>
-
-<%= link_to 'Home', root_path %>
+  <div class="row m-2 mt-4">
+    <h3>Players Endorsements</h3>
+  </div>
+  <div class="row m-2">
+  <% @player.endorsements.each do |endorsement| %>
+    <div class="col-6">Brand:<%= endorsement.brand %></div>
+    <div class="col-6">Notes:<%= endorsement.notes %></div>
+  <% end.empty? and begin %>
+    <div class="col-12">No Endorsements Found</div>
+  <% end %>
+  </div>
+  <div class="row m-2 mt-5">
+    <%= link_to 'Home', root_path %>
+  </div>
 <%# link_to 'Edit Player', edit_player_path(@player) %>
 
