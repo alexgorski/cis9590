@@ -15,6 +15,7 @@ import "../stylesheets/application"
 document.addEventListener("turbolinks:load",() => {
 	$('[data-toggle="tooltip"]').tooltip()
 	$('[data-toggle="popover"]').popover()
+	$('[data-toggle="table"]').bootstrapTable()
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
