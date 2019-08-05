@@ -49,4 +49,20 @@ namespace :import do
     end
   end
 
+  desc "TODO"
+  task endorsements: :environment do
+    filename = File.join( Rails.root, "lib/ENDORSEMENTS.csv" )
+    CSV.foreach(filename, headers: true) do |row|
+      player = Player.find(row[0])
+      if player and row[3]
+        endorsement = Endorsement.new
+        endorsement.brand = row[3]
+        endorsement.notes = row[4]
+        endorsement.source = row[5]
+        endorsement.player_id = player.id
+        endorsement.save!
+      end
+    end
+  end
+
 end
