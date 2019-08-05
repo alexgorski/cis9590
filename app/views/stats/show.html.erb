@@ -44,6 +44,9 @@
   <strong>Player ID:</strong>
   <%= @stat.player_id %>
 </p>
+<div class="row m-2 mt-5">
+  <div class="col-4"><%= link_to 'Home', root_path %></div>
+  <div class="col-4"><%= link_to 'All Stats', stats_path %></div>
+  <div class="col-4"><%= link_to 'Edit Stat', edit_stat_path(@stat) if @is_admin == 'nba'%></div>
+</div>
 
-<%= link_to 'Edit', edit_stat_path(@stat) %> |
-<%= link_to 'Back', stats_path %>

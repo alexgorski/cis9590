@@ -10,6 +10,7 @@ class StatsController < ApplicationController
   # GET /stats/1
   # GET /stats/1.json
   def show
+    @is_admin = params[:admin]
   end
 
   # GET /stats/new

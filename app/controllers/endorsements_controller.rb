@@ -10,6 +10,7 @@ class EndorsementsController < ApplicationController
   # GET /endorsements/1
   # GET /endorsements/1.json
   def show
+    @is_admin = params[:admin]
   end
 
   # GET /endorsements/new

@@ -19,7 +19,8 @@
   <strong>Team:</strong>
   <%= @coach.team.city %>
 </p>
-
-
-<%= link_to 'Home', root_path %> |
-<%= link_to 'All Coaches', coaches_path %>
+<div class="row m-2 mt-5">
+  <div class="col-4"><%= link_to 'Home', root_path %></div>
+  <div class="col-4"><%= link_to 'All Coaches', coaches_path %></div>
+  <div class="col-5"><%= link_to 'Edit Coach', edit_coach_path(@coach) if @is_admin == 'nba' %></div>
+</div>

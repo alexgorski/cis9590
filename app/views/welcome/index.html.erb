@@ -10,9 +10,12 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col" data-sortable="true">Name</th>
-      <th scope="col" data-sortable="true">Position & Details</th>
-      <th scope="col" data-sortable="true">Twitter</th>
-      <th scope="col" data-sortable="true">Instagram</th>
+      <th scope="col" data-sortable="true">Position</th>
+      <th scope="col" data-sortable="true">Points</th>
+      <th scope="col" data-sortable="true">Rebounds</th>
+      <th scope="col" data-sortable="true">Assits</th>
+      <th scope="col" data-sortable="true">Minutes</th>
+      <th scope="col" data-sortable="true" data-visible="true">Instagram</th>
       <th scope="col" data-sortable="true">Team</th>
     </tr>
   </thead>
@@ -22,7 +25,10 @@
       <tr>
         <td><%= link_to player.name, player %></td>
         <td><%= player.position %></td>
-        <td><%= player.twitter_handle %></td>
+        <td><%= player.stats.first.ppg %></td>
+        <td><%= player.stats.first.rpg %></td>
+        <td><%= player.stats.first.apg %></td>
+        <td><%= player.stats.first.mpg %></td>
         <td><%= player.instagram_handle %></td>
         <td><%= link_to player.team ? player.team.city : "CITY", player.team %></td>
       </tr>
@@ -31,6 +37,9 @@
       <tr>
         <td><%= link_to coach.name, coach %></td>
         <td>Coach</td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td><%= link_to coach.team ? coach.team.city : "CITY", coach.team%></td>
