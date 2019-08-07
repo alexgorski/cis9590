@@ -5,6 +5,7 @@ class EndorsementsController < ApplicationController
   # GET /endorsements.json
   def index
     @endorsements = Endorsement.all
+    @is_admin = params[:admin]
   end
 
   # GET /endorsements/1

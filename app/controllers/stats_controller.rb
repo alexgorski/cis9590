@@ -5,6 +5,7 @@ class StatsController < ApplicationController
   # GET /stats.json
   def index
     @stats = Stat.all
+    @is_admin = params[:admin]
   end
 
   # GET /stats/1
